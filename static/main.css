@@ -1,0 +1,113 @@
+body {
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.mt-md {
+  margin-top: 24px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.flex_container {
+  display: flex;
+}
+
+textarea[name="question"] {
+  line-height: 20px;
+  font-size: large;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 16px;
+  min-width: 400px;
+  min-height: 50px;
+}
+
+button[type="submit"],
+input[type="button"] {
+  padding: 10px 44px;
+  background-color: rgb(254, 201, 102);
+  border: 0px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: large;
+}
+
+button[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: rgb(248, 174, 35);
+  cursor: pointer;
+}
+
+.chat_history {
+  min-height: 80px;
+  background-color: rgba(239, 239, 240);
+  border-radius: 20px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+.chat_history .content {
+  text-align: left;
+  padding: 20px;
+}
+
+.chat_history .content .record {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #a9a9a9;
+  width: 24px;
+  height: 24px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+.hide {
+  display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+#chatPanel {
+  overflow-y: auto;
+  margin-bottom: 6px;
+}

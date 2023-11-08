@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="shortcut icon"
+        href="/static/question.png"
+    />
+    <link rel="stylesheet" type="text/css" href="static/main.css">
+    <title>Bay University Service Bot</title>
+</head>
+<body>
+    <div class="center">
+        <img src="/static/SFBU_logo.png" width="60px" />
+        <h1>Bay University Service Bot</h1>
+    </div>
+
+    <div class="container center" >
+        <form method="POST" action="/submit_question">
+            <div>
+                <textarea type="text" name="question" placeholder="Ask a question"></textarea>
+            <div>
+            <div>
+                <button id="askquestion" type="submit">Submit</button>
+            </div>
+        </form>
+
+
+        <div>
+            <h2>Chat History:</h2>
+            <div class='chat_history'>
+                {% if chat_history %}
+                    <!--if block html code-->
+                    <div class="content">
+                        {% for question, answer in chat_history %}
+                        <div class="record">
+                            <div><strong> Question: {{ question }}</strong></div>
+                            <div> Answer: {{ answer }} </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div>No Chat history. Please ask a question first</div>
+                {% endif %}
+
+                <div id="spinner" class="loader hide"></div>
+            </div>
+        </div>
+        <!-- Add a "Clear Chat" button -->
+        <div>
+            <form method="POST" action="/clear_chat">
+                <button type="submit">Clear Chat</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("askquestion").addEventListener("click", function() {
+            // Show the loading spinner
+            document.getElementById("spinner").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
